@@ -6,7 +6,7 @@ import '../../models/custom_drawer_item_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
-  static const List<CustomDrawerItemModel> itemModel =  [
+  static const List<CustomDrawerItemModel> itemModel = [
     CustomDrawerItemModel(
       iconData: (Icons.home),
       title: 'D A S B O A R D',
@@ -27,20 +27,24 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Drawer(
-      backgroundColor:  Color(0xffDBDBDB),
+      backgroundColor: Color(0xffDBDBDB),
+      elevation: 0,
       child: Column(
         children: [
-           DrawerHeader(
+          DrawerHeader(
             child: Icon(
               FontAwesomeIcons.solidHeart,
               size: 56,
             ),
           ),
-          Expanded(child: CustomItemsDrawerListView(itemModel: itemModel))
+          SizedBox(
+            height: 16,
+          ),
+          Expanded(
+            child: CustomItemsDrawerListView(itemModel: itemModel),
+          ),
         ],
       ),
     );
   }
 }
-
-
